@@ -16,13 +16,4 @@ Puppetfile.lock
 SIMP_ISO
 SIMP_ISO_STAGING
 spec/fixtures
-src/assets/*
-src/build/autorequires
-src/dist
-src/doc
-src/puppet/bootstrap/dist
-src/puppet/bootstrap/environments/simp/hieradata/.simp_migrated
-src/puppet/modules
-src/rsync
-src/rubygems
-src/utils/dist
+src/
