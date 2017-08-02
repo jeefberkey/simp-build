@@ -40,33 +40,42 @@ def detect_type(path)
 end
 
 # read the build/rpm_metadata/requires file and turn it into fpm arguments
-def parse_requires(path)
-  lines = File.readline(File.join(path,'build','rpm_metadata','requires'))
-  requires  = []
-  provides  = []
-  obsoletes = []
-  depends   = []
-  conflicts = []
-  replaces  = []
+def parse_requires(requires_file)
+  if File.exists? requires_file
+    lines = File.readlines(requires_file)
+  else
+    return []
+  end
+  h = {}
+  h[:provides]  = []
+  h[:depends]   = []
+  h[:conflicts] = []
+  h[:replaces]  = []
   lines.each do |line|
     @logger.debug line
     case line.strip
     when /^#/
       next
     when /^Requires:/
-      requires << line
+      h[:depends] << line
     when /^Provides:/
-      provides << line
+      h[:provides] << line
     when /^Obsoletes:/
-      obsoletes << line
+      h[:conflicts] << line
     when /^Depends:/
-      depends << line
+      h[:depends] << line
     when /^Conflicts:/
-      conflicts << line
+      h[:conflicts] << line
     when /^Replaces:/
-      replaces << line
+      h[:replaces] << line
     end
   end
+
+  cmd = []
+  h.each do |k,v|
+    cmd << v.map { |dep| "--#{k.to_s} \"#{dep.split(' ').drop(1).join(' ')}\"" }
+  end
+  cmd.flatten
 end
 
 # build the rpm for the asset
@@ -79,6 +88,8 @@ def build_rpm(path, data)
     pupmod = File.basename(path)
     pup_meta = JSON.load(File.read(File.join(path,'metadata.json')))
     changelog_path = File.join(path,'CHANGELOG')
+    deps_etc = parse_requires(File.join(path,'build','rpm_metadata','requires'))
+    @logger.debug deps_etc
     cmd =  [ "fpm -s dir -t rpm -n pupmod-#{pup_meta['name']}" ]
     cmd << [ "--description \"#{pup_meta['summary']}\"" ]
     cmd << [ "--maintainer '#{pup_meta['author']}'" ]
@@ -88,11 +99,12 @@ def build_rpm(path, data)
     cmd << [ "--package rpms" ]
     cmd << [ "--url #{pup_meta['source']}" ]
     cmd << [ "--rpm-digest sha512" ]
+    cmd << deps_etc
     cmd << [ "--rpm-changelog #{changelog_path}" ] if File.exists? changelog_path
     cmd << [ "#{path.split('').drop(2).join}=/usr/share/simp/modules" ]
     # binding.pry
-    @logger.debug "Running command -- #{cmd.join(' ')}"
-    output =  `#{cmd.join(' ')}`
+    @logger.debug "Running command -- #{cmd.flatten.join(' ')}"
+    output =  `#{cmd.flatten.join(' ')}`
     @logger.debug output
     return output
   when :doc
