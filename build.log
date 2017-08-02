@@ -1,0 +1,420 @@
+# Logfile created on 2017-08-01 21:35:27 -0400 by logger.rb/56815
+D, [2017-08-01T21:36:29.357373 #5831] DEBUG -- : Opening git repo at ./src/doc
+D, [2017-08-01T21:36:30.014703 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/rsync
+D, [2017-08-01T21:36:30.021092 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/grafana
+D, [2017-08-01T21:36:30.021132 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/kmod
+D, [2017-08-01T21:36:30.021194 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/elasticsearch
+D, [2017-08-01T21:36:30.626032 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-bfraser-grafana --description "This module provides Grafana, a dashboard and graph editor for Graphite and InfluxDB." --maintainer 'bfraser' --architecture noarch --license Apache-2.0 --version 2.5.0 --package rpms --url https://github.com/bfraser/puppet-grafana.git --rpm-digest sha512 src/puppet/modules/grafana=/usr/share/simp/modules
+D, [2017-08-01T21:36:30.628741 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-camptocamp-kmod --description "Manage Linux kernel modules with Puppet" --maintainer 'camptocamp' --architecture noarch --license Apache-2.0 --version 2.1.0 --package rpms --url https://github.com/camptocamp/puppet-kmod --rpm-digest sha512 src/puppet/modules/kmod=/usr/share/simp/modules
+D, [2017-08-01T21:36:30.638846 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-elasticsearch-elasticsearch --description "Module for managing and configuring Elasticsearch nodes" --maintainer 'elasticsearch' --architecture noarch --license Apache-2.0 --version 0.11.0 --package rpms --url https://github.com/elastic/puppet-elasticsearch --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/elasticsearch/CHANGELOG src/puppet/modules/elasticsearch=/usr/share/simp/modules
+D, [2017-08-01T21:36:30.779233 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-rsync --description "manage and rsync server, secured by stunnel" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.2 --package rpms --url https://github.com/simp/pupmod-simp-rsync --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/rsync/CHANGELOG src/puppet/modules/rsync=/usr/share/simp/modules
+D, [2017-08-01T21:36:44.557290 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:36:44.507482-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-bfraser-grafana-2.5.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:36:44.559283 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/logstash
+D, [2017-08-01T21:36:44.840508 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:36:44.765911-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-rsync-6.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:36:44.841441 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/file_concat
+D, [2017-08-01T21:36:44.868812 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:36:44.797457-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-camptocamp-kmod-2.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:36:44.869447 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders
+D, [2017-08-01T21:36:45.204663 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-elastic-logstash --description "Module for managing and configuring Logstash" --maintainer 'elastic' --architecture noarch --license Apache-2.0 --version 5.0.3 --package rpms --url https://github.com/elastic/puppet-logstash --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/logstash/CHANGELOG src/puppet/modules/logstash=/usr/share/simp/modules
+D, [2017-08-01T21:36:45.410093 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-electrical-file_concat --description "Library for concatenating multiple files into 1" --maintainer 'electrical' --architecture noarch --license Apache-2.0 --version 1.0.1 --package rpms --url http://github.com/electrical/puppet-lib-file_concat --rpm-digest sha512 src/puppet/modules/file_concat=/usr/share/simp/modules
+D, [2017-08-01T21:36:45.443386 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders --description "Alternative Augeas-based providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.1.3 --package rpms --url https://github.com/hercules-team/augeasproviders --rpm-digest sha512 src/puppet/modules/augeasproviders=/usr/share/simp/modules
+D, [2017-08-01T21:36:46.253924 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:36:45.872714-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-d95dd69d2192f4bf3b786d0e3c432f0a1b27f80649cc83cb82e4fd2d5ce0/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-d95dd69d2192f4bf3b786d0e3c432f0a1b27f80649cc83cb82e4fd2d5ce0\", \"--define\", \"_sourcedir /tmp/package-rpm-build-d95dd69d2192f4bf3b786d0e3c432f0a1b27f80649cc83cb82e4fd2d5ce0\", \"--define\", \"_rpmdir /tmp/package-rpm-build-d95dd69d2192f4bf3b786d0e3c432f0a1b27f80649cc83cb82e4fd2d5ce0/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-d95dd69d2192f4bf3b786d0e3c432f0a1b27f80649cc83cb82e4fd2d5ce0/SPECS/pupmod-elasticsearch-elasticsearch.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:36:46.256788 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_apache
+D, [2017-08-01T21:36:46.900583 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_apache --description "Augeas-based apache types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.0.1 --package rpms --url https://github.com/hercules-team/augeasproviders_apache --rpm-digest sha512 src/puppet/modules/augeasproviders_apache=/usr/share/simp/modules
+D, [2017-08-01T21:36:59.136340 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:36:59.093492-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-electrical-file_concat-1.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:36:59.139251 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_base
+D, [2017-08-01T21:36:59.314147 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:36:59.248421-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders-2.1.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:36:59.315568 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_core
+D, [2017-08-01T21:36:59.710413 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_base --description "Augeas-based base providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.0.1 --package rpms --url https://github.com/hercules-team/augeasproviders_base --rpm-digest sha512 src/puppet/modules/augeasproviders_base=/usr/share/simp/modules
+D, [2017-08-01T21:36:59.861594 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:36:59.710658-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-04afd8680ba782404623b7d0711a718b401ded4e3256b54ffc7d2ea08214/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-04afd8680ba782404623b7d0711a718b401ded4e3256b54ffc7d2ea08214\", \"--define\", \"_sourcedir /tmp/package-rpm-build-04afd8680ba782404623b7d0711a718b401ded4e3256b54ffc7d2ea08214\", \"--define\", \"_rpmdir /tmp/package-rpm-build-04afd8680ba782404623b7d0711a718b401ded4e3256b54ffc7d2ea08214/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-04afd8680ba782404623b7d0711a718b401ded4e3256b54ffc7d2ea08214/SPECS/pupmod-elastic-logstash.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:36:59.862300 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_grub
+D, [2017-08-01T21:36:59.921533 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_core --description "Alternative Augeas-based providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.1.3 --package rpms --url https://github.com/hercules-team/augeasproviders_core --rpm-digest sha512 src/puppet/modules/augeasproviders_core=/usr/share/simp/modules
+D, [2017-08-01T21:37:00.485456 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_grub --description "Augeas-based grub types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson, Trevor Vaughan' --architecture noarch --license Apache-2.0 --version 2.4.0 --package rpms --url https://github.com/hercules-team/augeasproviders_grub --rpm-digest sha512 src/puppet/modules/augeasproviders_grub=/usr/share/simp/modules
+D, [2017-08-01T21:37:00.582769 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:37:00.524872-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_apache-2.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:00.591192 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_mounttab
+D, [2017-08-01T21:37:01.323454 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_mounttab --description "Augeas-based mounttab provider for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.0.1 --package rpms --url https://github.com/hercules-team/augeasproviders_mounttab --rpm-digest sha512 src/puppet/modules/augeasproviders_mounttab=/usr/share/simp/modules
+D, [2017-08-01T21:37:13.267528 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:37:13.216287-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_base-2.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:13.269275 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_nagios
+D, [2017-08-01T21:37:13.572863 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:37:13.500039-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_core-2.1.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:13.573976 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_pam
+D, [2017-08-01T21:37:13.878991 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_nagios --description "Augeas-based nagios types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.0.1 --package rpms --url https://github.com/hercules-team/augeasproviders_nagios --rpm-digest sha512 src/puppet/modules/augeasproviders_nagios=/usr/share/simp/modules
+D, [2017-08-01T21:37:14.142477 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_pam --description "Augeas-based PAM type and provider for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.1.0 --package rpms --url https://github.com/hercules-team/augeasproviders_pam --rpm-digest sha512 src/puppet/modules/augeasproviders_pam=/usr/share/simp/modules
+D, [2017-08-01T21:37:14.306701 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:37:14.208960-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_grub-2.4.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:14.317963 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_postgresql
+D, [2017-08-01T21:37:14.932820 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:37:14.878102-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_mounttab-2.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:14.934148 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_puppet
+D, [2017-08-01T21:37:14.986088 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_postgresql --description "Augeas-based postgresql types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.0.3 --package rpms --url https://github.com/hercules-team/augeasproviders_postgresql --rpm-digest sha512 src/puppet/modules/augeasproviders_postgresql=/usr/share/simp/modules
+D, [2017-08-01T21:37:15.568398 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_puppet --description "Augeas-based Puppet configuration files types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.1.0 --package rpms --url https://github.com/hercules-team/augeasproviders_puppet --rpm-digest sha512 src/puppet/modules/augeasproviders_puppet=/usr/share/simp/modules
+D, [2017-08-01T21:37:27.367470 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:37:27.318499-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_nagios-2.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:27.368120 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_shellvar
+D, [2017-08-01T21:37:27.763851 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:37:27.714660-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_pam-2.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:27.766993 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_ssh
+D, [2017-08-01T21:37:28.074177 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_shellvar --description "Augeas-based shellvar type and provider for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.2.1 --package rpms --url https://github.com/hercules-team/augeasproviders_shellvar --rpm-digest sha512 src/puppet/modules/augeasproviders_shellvar=/usr/share/simp/modules
+D, [2017-08-01T21:37:28.348567 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_ssh --description "Augeas-based ssh types and providers for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson' --architecture noarch --license Apache-2.0 --version 2.5.0 --package rpms --url https://github.com/hercules-team/augeasproviders_ssh --rpm-digest sha512 src/puppet/modules/augeasproviders_ssh=/usr/share/simp/modules
+D, [2017-08-01T21:37:28.520736 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:37:28.462006-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_postgresql-2.0.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:28.521354 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/augeasproviders_sysctl
+D, [2017-08-01T21:37:29.126102 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:37:29.077798-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_puppet-2.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:29.129067 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/gpasswd
+D, [2017-08-01T21:37:29.163430 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-herculesteam-augeasproviders_sysctl --description "Augeas-based sysctl type and provider for Puppet" --maintainer 'Dominic Cleal, Raphael Pinson, Trevor Vaughan' --architecture noarch --license Apache-2.0 --version 2.1.0 --package rpms --url https://github.com/hercules-team/augeasproviders_sysctl --rpm-digest sha512 src/puppet/modules/augeasproviders_sysctl=/usr/share/simp/modules
+D, [2017-08-01T21:37:29.778702 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-onyxpoint-gpasswd --description "Adds support for :manages_members to the Linux group native type" --maintainer 'Trevor Vaughan <tvaughan@onyxpoint.com>' --architecture noarch --license Apache-2.0 --version 1.0.1 --package rpms --url https://github.com/onyxpoint/puppet-gpasswd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/gpasswd/CHANGELOG src/puppet/modules/gpasswd=/usr/share/simp/modules
+D, [2017-08-01T21:37:41.981359 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:37:41.927873-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_shellvar-2.2.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:41.984223 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/apache
+D, [2017-08-01T21:37:42.382170 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:37:42.319208-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_ssh-2.5.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:42.383917 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/concat
+D, [2017-08-01T21:37:42.592316 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-apache --description "Installs, configures, and manages Apache virtual hosts, web services, and modules." --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 1.11.0 --package rpms --url git://github.com/puppetlabs/puppetlabs-apache.git --rpm-digest sha512 src/puppet/modules/apache=/usr/share/simp/modules
+D, [2017-08-01T21:37:42.977704 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-concat --description "Construct files from multiple fragments." --maintainer 'Puppet Labs' --architecture noarch --license Apache-2.0 --version 2.2.0 --package rpms --url https://github.com/puppetlabs/puppetlabs-concat --rpm-digest sha512 src/puppet/modules/concat=/usr/share/simp/modules
+D, [2017-08-01T21:37:43.167125 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:37:43.112896-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-herculesteam-augeasproviders_sysctl-2.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:43.167736 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/inifile
+D, [2017-08-01T21:37:43.798033 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-inifile --description "Resource types for managing settings in INI files" --maintainer 'Puppet Labs' --architecture noarch --license Apache-2.0 --version 1.6.0 --package rpms --url https://github.com/puppetlabs/puppetlabs-inifile --rpm-digest sha512 src/puppet/modules/inifile=/usr/share/simp/modules
+D, [2017-08-01T21:37:44.652039 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:37:44.515043-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-onyxpoint-gpasswd-1.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:44.652623 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/java
+D, [2017-08-01T21:37:45.234013 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-java --description "Installs the correct Java package on various platforms." --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 1.6.0 --package rpms --url git://github.com/puppetlabs/puppetlabs-java --rpm-digest sha512 src/puppet/modules/java=/usr/share/simp/modules
+D, [2017-08-01T21:37:56.639578 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:37:56.586675-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-concat-2.2.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:56.641182 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/java_ks
+D, [2017-08-01T21:37:57.265326 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-java_ks --description "Manage arbitrary Java keystore files" --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 1.4.1 --package rpms --url https://github.com/puppetlabs/puppetlabs-java_ks.git --rpm-digest sha512 src/puppet/modules/java_ks=/usr/share/simp/modules
+D, [2017-08-01T21:37:57.735818 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:37:57.651334-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-inifile-1.6.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:57.741786 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/motd
+D, [2017-08-01T21:37:58.373150 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-motd --description "A simple module to demonstrate managing /etc/motd or Windows Logon Message as a template" --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 1.4.0 --package rpms --url https://github.com/puppetlabs/puppetlabs-motd --rpm-digest sha512 src/puppet/modules/motd=/usr/share/simp/modules
+D, [2017-08-01T21:37:58.898103 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:37:58.843288-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-java-1.6.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:58.899117 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/mysql
+D, [2017-08-01T21:37:59.334520 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:37:59.136092-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-apache-1.11.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:37:59.335776 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/postgresql
+D, [2017-08-01T21:37:59.520257 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-mysql --description "Installs, configures, and manages the MySQL service." --maintainer 'Puppet Labs' --architecture noarch --license Apache-2.0 --version 3.10.0 --package rpms --url git://github.com/puppetlabs/puppetlabs-mysql.git --rpm-digest sha512 src/puppet/modules/mysql=/usr/share/simp/modules
+D, [2017-08-01T21:37:59.981902 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-postgresql --description "Offers support for basic management of PostgreSQL databases." --maintainer 'Inkling/Puppet Labs' --architecture noarch --license Apache-2.0 --version 4.8.0 --package rpms --url git://github.com/puppetlabs/puppetlabs-postgresql.git --rpm-digest sha512 src/puppet/modules/postgresql=/usr/share/simp/modules
+D, [2017-08-01T21:38:12.262121 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:38:12.195095-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-java_ks-1.4.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:12.275910 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/stdlib
+D, [2017-08-01T21:38:13.312499 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-stdlib --description "Standard library of resources for Puppet modules." --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 4.13.1 --package rpms --url https://github.com/puppetlabs/puppetlabs-stdlib --rpm-digest sha512 src/puppet/modules/stdlib=/usr/share/simp/modules
+D, [2017-08-01T21:38:15.795354 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:38:15.700431-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-mysql-3.10.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:15.797219 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/datacat
+D, [2017-08-01T21:38:16.256497 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:38:16.159884-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-postgresql-4.8.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:16.257163 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/timezone
+D, [2017-08-01T21:38:16.495999 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-richardc-datacat --description "Puppet type for handling data fragments" --maintainer 'Richard Clamp' --architecture noarch --license Apache-2.0 --version 0.6.2 --package rpms --url https://github.com/richardc/puppet-datacat --rpm-digest sha512 src/puppet/modules/datacat=/usr/share/simp/modules
+D, [2017-08-01T21:38:16.859591 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-saz-timezone --description "UNKNOWN" --maintainer 'saz' --architecture noarch --license Apache License, Version 2.0 --version 3.3.0 --package rpms --url git://github.com/saz/puppet-timezone --rpm-digest sha512 src/puppet/modules/timezone=/usr/share/simp/modules
+D, [2017-08-01T21:38:30.757548 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:38:30.742553-0400", :message=>"All flags should be before the first argument (stray flags found: [\"--version\", \"--package\", \"--url\", \"--rpm-digest\"]", :level=>:warn}
+{:timestamp=>"2017-08-01T21:38:30.750322-0400", :message=>"Invalid package configuration: Cannot package the path './License,', does it exist?", :level=>:error}
+
+D, [2017-08-01T21:38:30.758223 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/acpid
+D, [2017-08-01T21:38:30.827754 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:38:30.766680-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-richardc-datacat-0.6.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:30.829079 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/activemq
+D, [2017-08-01T21:38:31.325936 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:38:31.074035-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-stdlib-4.13.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:31.328299 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/aide
+D, [2017-08-01T21:38:31.374254 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-acpid --description "Manages ACPI daemon" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 1.0.1 --package rpms --url https://github.com/simp/pupmod-simp-acpid --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/acpid/CHANGELOG src/puppet/modules/acpid=/usr/share/simp/modules
+D, [2017-08-01T21:38:31.436785 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-activemq --description "configures activemq to comply with SIMP security standards" --maintainer '["puppetcommunity", "simp"]' --architecture noarch --license Apache-2.0 --version 4.0.0 --package rpms --url https://github.com/simp/pupmod-simp-activemq --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/activemq/CHANGELOG src/puppet/modules/activemq=/usr/share/simp/modules
+D, [2017-08-01T21:38:32.005937 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-aide --description "manages AIDE" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-aide --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/aide/CHANGELOG src/puppet/modules/aide=/usr/share/simp/modules
+D, [2017-08-01T21:38:44.916502 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:38:44.875852-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-acpid-1.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:44.917242 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/at
+D, [2017-08-01T21:38:45.003236 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:38:44.958053-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-activemq-4.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:45.004119 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/auditd
+D, [2017-08-01T21:38:45.623610 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-auditd --description "A SIMP puppet module for managing auditd and audispd" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.1 --package rpms --url https://github.com/simp/pupmod-simp-auditd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/auditd/CHANGELOG src/puppet/modules/auditd=/usr/share/simp/modules
+D, [2017-08-01T21:38:45.648684 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:38:45.595811-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-aide-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:45.650968 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/autofs
+D, [2017-08-01T21:38:45.669279 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-at --description "A SIMP Puppet module for managing at" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.2 --package rpms --url https://github.com/simp/pupmod-simp-at --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/at/CHANGELOG src/puppet/modules/at=/usr/share/simp/modules
+D, [2017-08-01T21:38:46.339058 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-autofs --description "manages autofs" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-autofs --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/autofs/CHANGELOG src/puppet/modules/autofs=/usr/share/simp/modules
+D, [2017-08-01T21:38:49.380922 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:38:47.550779-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-puppetlabs-motd-1.4.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:38:49.381819 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/chkrootkit
+D, [2017-08-01T21:38:50.092220 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-chkrootkit --description "A SIMP puppet module for managing chkrootkit" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-chkrootkit --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/chkrootkit/CHANGELOG src/puppet/modules/chkrootkit=/usr/share/simp/modules
+D, [2017-08-01T21:39:00.550484 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:39:00.485903-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-auditd-7.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:00.554891 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/clamav
+D, [2017-08-01T21:39:00.937445 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:39:00.890182-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-autofs-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:00.938078 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/compliance_markup
+D, [2017-08-01T21:39:01.129301 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:39:01.008063-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-at-0.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:01.131392 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/cron
+D, [2017-08-01T21:39:01.312552 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-clamav --description "Safely manages clamav" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-clamav --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/clamav/CHANGELOG src/puppet/modules/clamav=/usr/share/simp/modules
+D, [2017-08-01T21:39:01.631589 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-compliance_markup --description "Compliance-mapping annotation for Puppet code" --maintainer 'simp' --architecture noarch --license Apache-2.0 --version 2.0.1 --package rpms --url https://github.com/simp/compliance_markup --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/compliance_markup/CHANGELOG src/puppet/modules/compliance_markup=/usr/share/simp/modules
+D, [2017-08-01T21:39:01.937213 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-cron --description "A SIMP Puppet module for managing cron" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-cron --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/cron/CHANGELOG src/puppet/modules/cron=/usr/share/simp/modules
+D, [2017-08-01T21:39:05.552717 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:39:05.454919-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-chkrootkit-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:05.553883 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/dhcp
+D, [2017-08-01T21:39:06.162388 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-dhcp --description "A Puppet module to automate configuration of DHCP" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-dhcp --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/dhcp/CHANGELOG src/puppet/modules/dhcp=/usr/share/simp/modules
+D, [2017-08-01T21:39:14.888484 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:39:14.837035-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-clamav-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:14.889919 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/dirtycow
+D, [2017-08-01T21:39:15.480584 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-dirtycow --description "SIMP module checking Dirty Cow Vulnerability" --maintainer 'SIMP' --architecture noarch --license Apache-2.0 --version 1.0.2 --package rpms --url https://github.com/simp/pupmod-simp-dirtycow --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/dirtycow/CHANGELOG src/puppet/modules/dirtycow=/usr/share/simp/modules
+D, [2017-08-01T21:39:16.353394 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:39:16.204185-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-cron-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:16.356178 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/fips
+D, [2017-08-01T21:39:16.768332 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:39:16.489597-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-284184743cb5c8ed02245bb37b4fb19095c28cfc9a2bf42647140a8ad6c4/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-284184743cb5c8ed02245bb37b4fb19095c28cfc9a2bf42647140a8ad6c4\", \"--define\", \"_sourcedir /tmp/package-rpm-build-284184743cb5c8ed02245bb37b4fb19095c28cfc9a2bf42647140a8ad6c4\", \"--define\", \"_rpmdir /tmp/package-rpm-build-284184743cb5c8ed02245bb37b4fb19095c28cfc9a2bf42647140a8ad6c4/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-284184743cb5c8ed02245bb37b4fb19095c28cfc9a2bf42647140a8ad6c4/SPECS/pupmod-simp-compliance_markup.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:39:16.771588 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/freeradius
+D, [2017-08-01T21:39:17.062994 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-fips --description "A SIMP module for managing FIPS" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.1.1 --package rpms --url https://github.com/simp/pupmod-simp-fips --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/fips/CHANGELOG src/puppet/modules/fips=/usr/share/simp/modules
+D, [2017-08-01T21:39:17.883754 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-freeradius --description "manages FreeRADIUS authentication servers" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.0 --package rpms --url https://github.com/simp/pupmod-simp-freeradius --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/freeradius/CHANGELOG src/puppet/modules/freeradius=/usr/share/simp/modules
+D, [2017-08-01T21:39:20.191061 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:39:20.148282-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-dhcp-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:20.193853 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/gdm
+D, [2017-08-01T21:39:20.821534 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-gdm --description "manages GDM" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.1 --package rpms --url https://github.com/simp/pupmod-simp-gdm --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/gdm/CHANGELOG src/puppet/modules/gdm=/usr/share/simp/modules
+D, [2017-08-01T21:39:29.670285 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:39:29.564199-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-dirtycow-1.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:29.673756 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/gnome
+D, [2017-08-01T21:39:30.357143 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-gnome --description "provides useful settings to set up GNOME." --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.2 --package rpms --url https://github.com/simp/pupmod-simp-gnome --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/gnome/CHANGELOG src/puppet/modules/gnome=/usr/share/simp/modules
+D, [2017-08-01T21:39:30.862081 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:39:30.806842-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-fips-0.1.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:30.873830 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/haveged
+D, [2017-08-01T21:39:31.490266 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-haveged --description "Install and manage the HAVEGE daemon." --maintainer 'SIMP Team' --architecture noarch --license BSD-2-Clause --version 0.4.0 --package rpms --url https://github.com/simp/puppet-haveged --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/haveged/CHANGELOG src/puppet/modules/haveged=/usr/share/simp/modules
+D, [2017-08-01T21:39:32.098537 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:39:32.011511-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-freeradius-7.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:32.099714 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/incron
+D, [2017-08-01T21:39:32.726928 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-incron --description "A SIMP Puppet module for managing incron" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-incron --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/incron/CHANGELOG src/puppet/modules/incron=/usr/share/simp/modules
+D, [2017-08-01T21:39:34.646605 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:39:34.592405-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-gdm-7.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:34.647237 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/iptables
+D, [2017-08-01T21:39:35.237963 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-iptables --description "Safely manages IPTables firewall rules" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-iptables --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/iptables/CHANGELOG src/puppet/modules/iptables=/usr/share/simp/modules
+D, [2017-08-01T21:39:44.075855 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:39:44.026876-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-gnome-6.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:44.076482 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/issue
+D, [2017-08-01T21:39:44.711837 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-issue --description "A SIMP Puppet module for managing /etc/issue" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-issue.git --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/issue/CHANGELOG src/puppet/modules/issue=/usr/share/simp/modules
+D, [2017-08-01T21:39:45.598723 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:39:45.480610-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-c60a2f80d43d1decba5b0ac0c308fc025ce82fcfaa04e47a960c4ab41538/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-c60a2f80d43d1decba5b0ac0c308fc025ce82fcfaa04e47a960c4ab41538\", \"--define\", \"_sourcedir /tmp/package-rpm-build-c60a2f80d43d1decba5b0ac0c308fc025ce82fcfaa04e47a960c4ab41538\", \"--define\", \"_rpmdir /tmp/package-rpm-build-c60a2f80d43d1decba5b0ac0c308fc025ce82fcfaa04e47a960c4ab41538/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-c60a2f80d43d1decba5b0ac0c308fc025ce82fcfaa04e47a960c4ab41538/SPECS/pupmod-simp-haveged.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:39:45.599556 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/jenkins
+D, [2017-08-01T21:39:46.255896 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-jenkins --description "Management of a Jenkins installation" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-jenkins --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/jenkins/CHANGELOG src/puppet/modules/jenkins=/usr/share/simp/modules
+D, [2017-08-01T21:39:46.918661 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:39:46.811829-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-incron-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:46.919632 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/journald
+D, [2017-08-01T21:39:47.516934 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-cristifalcas-journald --description "Configures journald on el7" --maintainer 'Cristian Falcas' --architecture noarch --license Apache-2.0 --version 0.2.2 --package rpms --url git@github.com:cristifalcas/puppet-journald.git --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/journald/CHANGELOG src/puppet/modules/journald=/usr/share/simp/modules
+D, [2017-08-01T21:39:49.711841 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:39:49.601184-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-iptables-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:49.712492 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/krb5
+D, [2017-08-01T21:39:50.353514 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-krb5 --description "Puppet management of the MIT kerberos stack" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.1 --package rpms --url https://github.com/simp/pupmod-simp-krb5 --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/krb5/CHANGELOG src/puppet/modules/krb5=/usr/share/simp/modules
+D, [2017-08-01T21:39:59.049250 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:39:58.909649-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-issue-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:39:59.049800 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/libreswan
+D, [2017-08-01T21:39:59.641078 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-libreswan --description "Manages IPSec VPN Tunnels" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 3.0.0 --package rpms --url https://github.com/simp/pupmod-simp-libreswan --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/libreswan/CHANGELOG src/puppet/modules/libreswan=/usr/share/simp/modules
+D, [2017-08-01T21:40:00.316584 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:40:00.271843-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-jenkins-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:00.319157 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/libvirt
+D, [2017-08-01T21:40:01.147405 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-libvirt --description "manages libvirtd in a SIMP-compatible environment" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 5.0.2 --package rpms --url https://github.com/simp/pupmod-simp-libvirt --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/libvirt/CHANGELOG src/puppet/modules/libvirt=/usr/share/simp/modules
+D, [2017-08-01T21:40:01.366613 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:40:01.309618-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-cristifalcas-journald-0.2.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:01.369192 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/logrotate
+D, [2017-08-01T21:40:02.660745 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-logrotate --description "configure SIMP logrotate" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-logrotate --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/logrotate/CHANGELOG src/puppet/modules/logrotate=/usr/share/simp/modules
+D, [2017-08-01T21:40:04.601547 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:40:04.520217-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-krb5-7.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:04.605601 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/mcafee
+D, [2017-08-01T21:40:05.221228 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-mcafee --description "A SIMP module for managing mcafee" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-mcafee --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/mcafee/CHANGELOG src/puppet/modules/mcafee=/usr/share/simp/modules
+D, [2017-08-01T21:40:13.692544 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:40:13.585245-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-libreswan-3.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:13.696624 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/mcollective
+D, [2017-08-01T21:40:14.444448 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-mcollective --description "Manages MCollective agents, clients, and middleware of an MCollective cluster. Forked from voxpupuli/puppet-mcollective" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 3.0.0 --package rpms --url https://github.com/simp/pupmod-simp-mcollective --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/mcollective/CHANGELOG src/puppet/modules/mcollective=/usr/share/simp/modules
+D, [2017-08-01T21:40:15.143935 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:40:15.092216-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-libvirt-5.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:15.144998 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/mozilla
+D, [2017-08-01T21:40:15.763613 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-mozilla --description "Manage Mozilla products (currently supported: firefox)" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 5.0.0 --package rpms --url https://github.com/simp/pupmod-simp-mozilla --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/mozilla/CHANGELOG src/puppet/modules/mozilla=/usr/share/simp/modules
+D, [2017-08-01T21:40:16.827516 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:40:16.767510-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-logrotate-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:16.829006 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/named
+D, [2017-08-01T21:40:17.516279 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-named --description "manages either a chrooted named process or a caching nameserver" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-named --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/named/CHANGELOG src/puppet/modules/named=/usr/share/simp/modules
+D, [2017-08-01T21:40:19.206196 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:40:19.163204-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-mcafee-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:19.206807 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/network
+D, [2017-08-01T21:40:21.383065 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-network --description "manages host networking" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-network --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/network/CHANGELOG src/puppet/modules/network=/usr/share/simp/modules
+D, [2017-08-01T21:40:28.969209 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:40:28.808466-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-mcollective-3.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:28.970674 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/nfs
+D, [2017-08-01T21:40:29.475451 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:40:29.428604-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-mozilla-5.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:29.476753 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/ntpd
+D, [2017-08-01T21:40:29.601858 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-nfs --description "manages NFS server and client, also PKI and stunnelling" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.2 --package rpms --url https://github.com/simp/pupmod-simp-nfs --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/nfs/CHANGELOG src/puppet/modules/nfs=/usr/share/simp/modules
+D, [2017-08-01T21:40:30.169880 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-ntpd --description "manages NTP server and client" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-ntpd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/ntpd/CHANGELOG src/puppet/modules/ntpd=/usr/share/simp/modules
+D, [2017-08-01T21:40:31.353374 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:40:31.292935-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-named-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:31.353970 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/oddjob
+D, [2017-08-01T21:40:31.925739 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-oddjob --description "Basic management for OddJob" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 2.0.0 --package rpms --url https://github.com/simp/pupmod-simp-oddjob --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/oddjob/CHANGELOG src/puppet/modules/oddjob=/usr/share/simp/modules
+D, [2017-08-01T21:40:35.583776 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:40:35.507228-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-network-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:35.593403 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_openldap
+D, [2017-08-01T21:40:36.267354 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_openldap --description "Manages OpenLDAP and related security bindings" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.2 --package rpms --url https://github.com/simp/pupmod-simp-simp_openldap --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_openldap/CHANGELOG src/puppet/modules/simp_openldap=/usr/share/simp/modules
+D, [2017-08-01T21:40:43.701270 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:40:43.627727-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-nfs-6.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:43.702434 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/openscap
+D, [2017-08-01T21:40:43.892429 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:40:43.845175-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-ntpd-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:43.894129 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/pam
+D, [2017-08-01T21:40:44.298454 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-openscap --description "Safely manages openscap" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-openscap --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/openscap/CHANGELOG src/puppet/modules/openscap=/usr/share/simp/modules
+D, [2017-08-01T21:40:44.518027 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-pam --description "A SIMP puppet module for managing pam" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.2 --package rpms --url https://github.com/simp/pupmod-simp-pam --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/pam/CHANGELOG src/puppet/modules/pam=/usr/share/simp/modules
+D, [2017-08-01T21:40:45.712008 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:40:45.666456-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-oddjob-2.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:45.712951 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/pki
+D, [2017-08-01T21:40:46.332055 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-pki --description "Manages non-Puppet PKI keys and certificates" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-pki --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/pki/CHANGELOG src/puppet/modules/pki=/usr/share/simp/modules
+D, [2017-08-01T21:40:50.702297 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:40:50.617422-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_openldap-6.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:50.703296 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/polkit
+D, [2017-08-01T21:40:51.309002 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-polkit --description "Manages PolicyKit objects" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-polkit --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/polkit/CHANGELOG src/puppet/modules/polkit=/usr/share/simp/modules
+D, [2017-08-01T21:40:58.490403 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:40:58.400644-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-60ba32e4caaa74b334a9d25edac575f14d832097fbd376fc907593c2ead1/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-60ba32e4caaa74b334a9d25edac575f14d832097fbd376fc907593c2ead1\", \"--define\", \"_sourcedir /tmp/package-rpm-build-60ba32e4caaa74b334a9d25edac575f14d832097fbd376fc907593c2ead1\", \"--define\", \"_rpmdir /tmp/package-rpm-build-60ba32e4caaa74b334a9d25edac575f14d832097fbd376fc907593c2ead1/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-60ba32e4caaa74b334a9d25edac575f14d832097fbd376fc907593c2ead1/SPECS/pupmod-simp-openscap.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:40:58.494537 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/postfix
+D, [2017-08-01T21:40:58.644456 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:40:58.583256-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-pam-6.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:40:58.648606 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/pupmod
+D, [2017-08-01T21:40:59.087652 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-postfix --description "Manages the Postfix mail server" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 5.0.1 --package rpms --url https://github.com/simp/pupmod-simp-postfix --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/postfix/CHANGELOG src/puppet/modules/postfix=/usr/share/simp/modules
+D, [2017-08-01T21:40:59.712943 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-pupmod --description "A puppet module to manage puppetserver and puppet agents" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.3.0 --package rpms --url https://github.com/simp/pupmod-simp-pupmod --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/pupmod/CHANGELOG src/puppet/modules/pupmod=/usr/share/simp/modules
+D, [2017-08-01T21:41:00.081314 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:41:00.036093-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-pki-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:00.083042 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/puppetdb
+D, [2017-08-01T21:41:00.763374 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-puppetlabs-puppetdb --description "Installs PostgreSQL and PuppetDB, sets up the connection to Puppet master." --maintainer 'puppetlabs' --architecture noarch --license Apache-2.0 --version 5.1.2 --package rpms --url git://github.com/puppetlabs/puppetlabs-puppetdb.git --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/puppetdb/CHANGELOG src/puppet/modules/puppetdb=/usr/share/simp/modules
+D, [2017-08-01T21:41:05.271400 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:41:05.223250-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-polkit-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:05.272131 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/resolv
+D, [2017-08-01T21:41:05.887795 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-resolv --description "A SIMP Puppet module for managing client-side dns settings" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-resolv --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/resolv/CHANGELOG src/puppet/modules/resolv=/usr/share/simp/modules
+D, [2017-08-01T21:41:12.990376 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:41:12.923316-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-postfix-5.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:12.992597 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/rsyslog
+D, [2017-08-01T21:41:13.642413 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-rsyslog --description "A puppet module to support RSyslog versions 7 and higher using new style RainerScript." --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.2 --package rpms --url https://github.com/simp/pupmod-simp-rsyslog --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/rsyslog/CHANGELOG src/puppet/modules/rsyslog=/usr/share/simp/modules
+D, [2017-08-01T21:41:13.906858 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:41:13.792171-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-pupmod-7.3.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:13.910268 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/selinux
+D, [2017-08-01T21:41:14.769713 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-selinux --description "manages the SELinux system state" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 2.0.2 --package rpms --url https://github.com/simp/pupmod-simp-selinux --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/selinux/CHANGELOG src/puppet/modules/selinux=/usr/share/simp/modules
+D, [2017-08-01T21:41:15.434534 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:41:15.245101-0400", :message=>"Process failed: rpmbuild failed (exit code 1). Full command was:[\"rpmbuild\", \"-bb\", \"--target\", \"noarch\", \"--define\", \"buildroot /tmp/package-rpm-build-255f5038d2e19ce271d07da8301db482837025163b521787ceba2513cb86/BUILD\", \"--define\", \"_topdir /tmp/package-rpm-build-255f5038d2e19ce271d07da8301db482837025163b521787ceba2513cb86\", \"--define\", \"_sourcedir /tmp/package-rpm-build-255f5038d2e19ce271d07da8301db482837025163b521787ceba2513cb86\", \"--define\", \"_rpmdir /tmp/package-rpm-build-255f5038d2e19ce271d07da8301db482837025163b521787ceba2513cb86/RPMS\", \"--define\", \"_tmppath /tmp\", \"/tmp/package-rpm-build-255f5038d2e19ce271d07da8301db482837025163b521787ceba2513cb86/SPECS/pupmod-puppetlabs-puppetdb.spec\"]", :level=>:error}
+
+D, [2017-08-01T21:41:15.435500 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/simp
+D, [2017-08-01T21:41:16.120348 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp --description "default profiles for core SIMP installations" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 4.0.0 --package rpms --url https://github.com/simp/pupmod-simp-simp --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp/CHANGELOG src/puppet/modules/simp=/usr/share/simp/modules
+D, [2017-08-01T21:41:20.340276 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:41:20.206187-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-resolv-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:20.341602 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/simpcat
+D, [2017-08-01T21:41:20.983188 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simpcat --description "Builds files from fragments" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-simpcat --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simpcat/CHANGELOG src/puppet/modules/simpcat=/usr/share/simp/modules
+D, [2017-08-01T21:41:28.514300 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:41:28.472458-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-selinux-2.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:28.515088 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_apache
+D, [2017-08-01T21:41:29.155882 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_apache --description "configure SIMP apache & component sites (NOTE: legacy, conflicts with puppetlabs-apache)" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-apache --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_apache/CHANGELOG src/puppet/modules/simp_apache=/usr/share/simp/modules
+D, [2017-08-01T21:41:29.169805 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:41:29.002287-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-rsyslog-7.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:29.172620 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_elasticsearch
+D, [2017-08-01T21:41:29.821938 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_elasticsearch --description "SIMP module for integrating elastic/puppet-elasticsearch" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 4.1.0 --package rpms --url https://github.com/simp/pupmod-simp-simp_elasticsearch --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_elasticsearch/CHANGELOG src/puppet/modules/simp_elasticsearch=/usr/share/simp/modules
+D, [2017-08-01T21:41:30.721925 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:41:30.602701-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp-4.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:30.724452 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_grafana
+D, [2017-08-01T21:41:31.367228 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_grafana --description "A profile module to integrate Grafana with SIMP" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 1.0.3 --package rpms --url https://github.com/simp/pupmod-simp-simp_grafana --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_grafana/CHANGELOG src/puppet/modules/simp_grafana=/usr/share/simp/modules
+D, [2017-08-01T21:41:34.873147 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:41:34.826004-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simpcat-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:34.874738 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_logstash
+D, [2017-08-01T21:41:35.474794 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_logstash --description "SIMP module for integrating elastic/puppet-logstash" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 4.0.0 --package rpms --url https://github.com/simp/pupmod-simp-simp_logstash --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_logstash/CHANGELOG src/puppet/modules/simp_logstash=/usr/share/simp/modules
+D, [2017-08-01T21:41:43.630865 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:41:43.556832-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_apache-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:43.636335 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_options
+D, [2017-08-01T21:41:43.791032 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:41:43.738057-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_elasticsearch-4.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:43.793776 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_nfs
+D, [2017-08-01T21:41:44.244554 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_options --description "Variables enabling SIMP core capabilities" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 1.0.1 --package rpms --url https://github.com/simp/pupmod-simp-simp_options --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_options/CHANGELOG src/puppet/modules/simp_options=/usr/share/simp/modules
+D, [2017-08-01T21:41:44.469023 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_nfs --description "A SIMP Puppet Profile for common NFS configurations" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.2 --package rpms --url https://github.com/simp/pupmod-simp-simp_nfs --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_nfs/CHANGELOG src/puppet/modules/simp_nfs=/usr/share/simp/modules
+D, [2017-08-01T21:41:45.478586 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:41:45.392598-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_grafana-1.0.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:45.482730 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/simp_rsyslog
+D, [2017-08-01T21:41:46.126059 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simp_rsyslog --description "A SIMP Puppet Profile for standard Rsyslog configurations" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.3 --package rpms --url https://github.com/simp/pupmod-simp-simp_rsyslog --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simp_rsyslog/CHANGELOG src/puppet/modules/simp_rsyslog=/usr/share/simp/modules
+D, [2017-08-01T21:41:49.767293 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:41:49.692557-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_logstash-4.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:49.769523 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/simplib
+D, [2017-08-01T21:41:50.421364 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-simplib --description "A collection of common SIMP functions, facts, and types" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 3.3.1 --package rpms --url https://github.com/simp/pupmod-simp-simplib --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/simplib/CHANGELOG src/puppet/modules/simplib=/usr/share/simp/modules
+D, [2017-08-01T21:41:58.510961 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:41:58.455048-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_options-1.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:58.511749 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/site
+D, [2017-08-01T21:41:58.598389 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:41:58.548198-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_nfs-0.0.2-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:41:58.599032 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/ssh
+D, [2017-08-01T21:41:59.136040 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-site --description "A skeleton profile module" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 2.0.3 --package rpms --url https://github.com/simp/pupmod-simp-site --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/site/CHANGELOG src/puppet/modules/site=/usr/share/simp/modules
+D, [2017-08-01T21:41:59.353083 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-ssh --description "Manage ssh" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.1.0 --package rpms --url https://github.com/simp/pupmod-simp-ssh --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/ssh/CHANGELOG src/puppet/modules/ssh=/usr/share/simp/modules
+D, [2017-08-01T21:42:00.836924 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:42:00.740784-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simp_rsyslog-0.0.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:00.839084 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/sssd
+D, [2017-08-01T21:42:01.548695 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-sssd --description "Manages SSSD" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-sssd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/sssd/CHANGELOG src/puppet/modules/sssd=/usr/share/simp/modules
+D, [2017-08-01T21:42:05.591744 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:42:05.422672-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-simplib-3.3.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:05.595757 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/stunnel
+D, [2017-08-01T21:42:06.182481 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-stunnel --description "manages stunnel with PKI support" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-stunnel --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/stunnel/CHANGELOG src/puppet/modules/stunnel=/usr/share/simp/modules
+D, [2017-08-01T21:42:13.599818 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:42:13.530786-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-ssh-6.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:13.602134 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/sudo
+D, [2017-08-01T21:42:14.002900 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:42:13.863970-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-site-2.0.3-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:14.003919 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/sudosh
+D, [2017-08-01T21:42:14.210582 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-sudo --description "Manage sudo" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 5.0.1 --package rpms --url https://github.com/simp/pupmod-simp-sudo --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/sudo/CHANGELOG src/puppet/modules/sudo=/usr/share/simp/modules
+D, [2017-08-01T21:42:14.633543 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-sudosh --description "Manage sudosh" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-sudosh --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/sudosh/CHANGELOG src/puppet/modules/sudosh=/usr/share/simp/modules
+D, [2017-08-01T21:42:15.812304 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:42:15.730766-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-sssd-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:15.812992 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/svckill
+D, [2017-08-01T21:42:16.462237 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-svckill --description "Disables all services that are not controlled by Puppet." --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 3.2.0 --package rpms --url https://github.com/simp/pupmod-simp-svckill --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/svckill/CHANGELOG src/puppet/modules/svckill=/usr/share/simp/modules
+D, [2017-08-01T21:42:20.229716 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:42:20.180852-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-stunnel-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:20.232828 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/swap
+D, [2017-08-01T21:42:20.857122 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-swap --description "A SIMP Puppet module for managing swappiness" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.1.0 --package rpms --url https://github.com/simp/pupmod-simp-swap --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/swap/CHANGELOG src/puppet/modules/swap=/usr/share/simp/modules
+D, [2017-08-01T21:42:28.063232 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:42:28.013503-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-sudo-5.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:28.064175 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/tcpwrappers
+D, [2017-08-01T21:42:28.329441 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:42:28.286703-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-sudosh-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:28.332650 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/tftpboot
+D, [2017-08-01T21:42:28.643898 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-tcpwrappers --description "manages /etc/hosts.allow (/etc/hosts.deny is ALL:ALL by default)" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-tcpwrappers --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/tcpwrappers/CHANGELOG src/puppet/modules/tcpwrappers=/usr/share/simp/modules
+D, [2017-08-01T21:42:29.019644 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-tftpboot --description "A Puppet module to automate configuration of tftpboot" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-tftpboot --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/tftpboot/CHANGELOG src/puppet/modules/tftpboot=/usr/share/simp/modules
+D, [2017-08-01T21:42:30.423099 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:42:30.318893-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-svckill-3.2.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:30.439218 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/tpm
+D, [2017-08-01T21:42:31.046167 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-tpm --description "manages TPMs and IMA (if your system supports it)" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 1.0.0 --package rpms --url https://github.com/simp/pupmod-simp-tpm --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/tpm/CHANGELOG src/puppet/modules/tpm=/usr/share/simp/modules
+D, [2017-08-01T21:42:35.229892 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:42:35.085045-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-swap-0.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:35.230933 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/tuned
+D, [2017-08-01T21:42:36.091161 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-tuned --description "A SIMP Puppet module for managing tuned/ktune" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.0.1 --package rpms --url https://github.com/simp/pupmod-simp-tuned --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/tuned/CHANGELOG src/puppet/modules/tuned=/usr/share/simp/modules
+D, [2017-08-01T21:42:42.660238 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:42:42.607748-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-tcpwrappers-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:42.663112 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/upstart
+D, [2017-08-01T21:42:42.949089 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:42:42.893321-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-tftpboot-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:42.950245 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/vnc
+D, [2017-08-01T21:42:43.255390 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-upstart --description "A SIMP puppet module for managing upstart" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.0 --package rpms --url https://github.com/simp/pupmod-simp-upstart --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/upstart/CHANGELOG src/puppet/modules/upstart=/usr/share/simp/modules
+D, [2017-08-01T21:42:43.541463 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-vnc --description "Manages VNC" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 6.0.1 --package rpms --url https://github.com/simp/pupmod-simp-vnc --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/vnc/CHANGELOG src/puppet/modules/vnc=/usr/share/simp/modules
+D, [2017-08-01T21:42:45.058347 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:42:44.982650-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-tpm-1.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:45.062471 #5858] DEBUG -- : Opening git repo at ./src/puppet/modules/vsftpd
+D, [2017-08-01T21:42:45.658751 #5858] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-vsftpd --description "Manage vsftpd" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 7.0.0 --package rpms --url https://github.com/simp/pupmod-simp-vsftpd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/vsftpd/CHANGELOG src/puppet/modules/vsftpd=/usr/share/simp/modules
+D, [2017-08-01T21:42:50.572293 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:42:50.444514-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-tuned-0.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:50.573243 #5852] DEBUG -- : Opening git repo at ./src/puppet/modules/xinetd
+D, [2017-08-01T21:42:51.178964 #5852] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-xinetd --description "Manages xinetd" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 4.0.1 --package rpms --url https://github.com/simp/pupmod-simp-xinetd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/xinetd/CHANGELOG src/puppet/modules/xinetd=/usr/share/simp/modules
+D, [2017-08-01T21:42:57.124916 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:42:57.072251-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-upstart-6.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:57.146762 #5855] DEBUG -- : Opening git repo at ./src/puppet/modules/useradd
+D, [2017-08-01T21:42:57.717254 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:42:57.679702-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-vnc-6.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:42:57.719528 #5849] DEBUG -- : Opening git repo at ./src/puppet/modules/nsswitch
+D, [2017-08-01T21:42:57.834687 #5855] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-simp-useradd --description "A SIMP puppet module for managing settings regarding users and user creation" --maintainer 'SIMP Team' --architecture noarch --license Apache-2.0 --version 0.1.0 --package rpms --url https://github.com/simp/pupmod-simp-useradd --rpm-digest sha512 --rpm-changelog ./src/puppet/modules/useradd/CHANGELOG src/puppet/modules/useradd=/usr/share/simp/modules
+D, [2017-08-01T21:42:58.402158 #5849] DEBUG -- : Running command -- fpm -s dir -t rpm -n pupmod-trlinkin-nsswitch --description "Module for managing nsswitch.conf" --maintainer 'Thomas Linkin' --architecture noarch --license Apache-2.0 --version 2.0.0 --package rpms --url https://github.com/trlinkin/puppet-nsswitch --rpm-digest sha512 src/puppet/modules/nsswitch=/usr/share/simp/modules
+D, [2017-08-01T21:42:59.922336 #5858] DEBUG -- : {:timestamp=>"2017-08-01T21:42:59.866419-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-vsftpd-7.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:43:04.705943 #5852] DEBUG -- : {:timestamp=>"2017-08-01T21:43:04.662027-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-xinetd-4.0.1-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:43:10.507232 #5855] DEBUG -- : {:timestamp=>"2017-08-01T21:43:10.461114-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-simp-useradd-0.1.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:43:10.921050 #5849] DEBUG -- : {:timestamp=>"2017-08-01T21:43:10.877289-0400", :message=>"File already exists, refusing to continue: rpms/pupmod-trlinkin-nsswitch-2.0.0-1.noarch.rpm", :level=>:fatal}
+
+D, [2017-08-01T21:43:10.953173 #7657] DEBUG -- : Opening git repo at ./src/rubygems/simp_cli

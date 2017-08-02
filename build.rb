@@ -3,15 +3,19 @@ require 'yaml'
 require 'json'
 require 'git'
 require 'fpm'
+require 'parallel'
+require 'logger'
 
 require 'pry'
 
 @release = ARGV[0]
 @iso     = ARGV[1]
 
+@logger = Logger.new('build.log')
+
 # make sure assets are checked out and at are the ref they're supposed to be at
 def ensure_git_repo(path, data)
-  puts "Opening git repo at #{path}"
+  @logger.debug "Opening git repo at #{path}"
   if File.exists? path
     g = Git.open(path)
   else
@@ -39,11 +43,13 @@ end
 def parse_requires(path)
   lines = File.readline(File.join(path,'build','rpm_metadata','requires'))
   requires  = []
-  depends   = []
   provides  = []
+  obsoletes = []
+  depends   = []
   conflicts = []
   replaces  = []
   lines.each do |line|
+    @logger.debug line
     case line.strip
     when /^#/
       next
@@ -53,6 +59,13 @@ def parse_requires(path)
       provides << line
     when /^Obsoletes:/
       obsoletes << line
+    when /^Depends:/
+      depends << line
+    when /^Conflicts:/
+      conflicts << line
+    when /^Replaces:/
+      replaces << line
+    end
   end
 end
 
@@ -60,29 +73,32 @@ end
 def build_rpm(path, data)
   g = ensure_git_repo(path, data)
   type = detect_type(path)
-  Dir.chdir(path) do
-    case type
-    when :pupmod
-      pupmod = File.basename(path)
-      pup_meta = JSON.load(File.read('metadata.json'))
-      cmd =  [ "fpm -s dir -t rpm -n pupmod-#{pup_meta['name']}" ]
-      cmd << [ "--description \"#{pup_meta['summary']}\"" ]
-      cmd << [ "--maintainer '#{pup_meta['author']}'" ]
-      cmd << [ "--architecture noarch" ]
-      cmd << [ "--license #{pup_meta['license']}" ]
-      cmd << [ "--version #{pup_meta['version']}" ]
-      cmd << [ "--package rpms" ]
-      cmd << [ "--url #{pup_meta['source']}" ]
-      cmd << [ "--rpm-digest sha512" ]
-      cmd << [ "--rpm-changelog #{File.join(path,'CHANGELOG')}" ]
-      cmd << [ "#{path.split('').drop(2).join}=/usr/share/simp/modules" ]
-      binding.pry
-    when :doc
-      # dumb python stuff
-    when :asset
-      # easy existing spec file stuff?
-    end
-    # `fpm -s dir -t rpm -n pupmod-simp-acpid src/puppet/modules/#{pupmod}=/usr/share/simp/modules`
+
+  case type
+  when :pupmod
+    pupmod = File.basename(path)
+    pup_meta = JSON.load(File.read(File.join(path,'metadata.json')))
+    changelog_path = File.join(path,'CHANGELOG')
+    cmd =  [ "fpm -s dir -t rpm -n pupmod-#{pup_meta['name']}" ]
+    cmd << [ "--description \"#{pup_meta['summary']}\"" ]
+    cmd << [ "--maintainer '#{pup_meta['author']}'" ]
+    cmd << [ "--architecture noarch" ]
+    cmd << [ "--license #{pup_meta['license']}" ]
+    cmd << [ "--version #{pup_meta['version']}" ]
+    cmd << [ "--package rpms" ]
+    cmd << [ "--url #{pup_meta['source']}" ]
+    cmd << [ "--rpm-digest sha512" ]
+    cmd << [ "--rpm-changelog #{changelog_path}" ] if File.exists? changelog_path
+    cmd << [ "#{path.split('').drop(2).join}=/usr/share/simp/modules" ]
+    # binding.pry
+    @logger.debug "Running command -- #{cmd.join(' ')}"
+    output =  `#{cmd.join(' ')}`
+    @logger.debug output
+    return output
+  when :doc
+    # dumb python stuff
+  when :asset
+    # easy existing spec file stuff?
   end
 end
 
@@ -96,14 +112,15 @@ def main
   basedir = '.'
   rpmbuild_targets.each do |path, projects|
     workingdir = File.join(basedir, path)
-    FileUtils.mkdir_p(workingdir) unless (File.exists? workingdir and File.directory? workingdir )
-    projects.each do |pupmod, data|
+    FileUtils.mkdir_p(workingdir) unless File.exists? workingdir
+
+    Parallel.each(projects, progress: 'Building RPMS') do |pupmod, data|
       pupmod_name = pupmod.split('-')[1]
       mod_path = File.join(workingdir, pupmod_name)
       build_rpm(mod_path, data)
     end
+
   end
-  binding.pry
 end
 
 main()
