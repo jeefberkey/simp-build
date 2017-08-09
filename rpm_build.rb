@@ -20,7 +20,8 @@ def ensure_git_repo(path, data)
     g = Git.open(path)
   else
     git_url = "#{data['type']}://#{data['source']['primary_source']['host']}/#{data['source']['primary_source']['path']}"
-    g = Git.clone(git_url, path)
+    g = Git.init(path)
+    g.add_remote('origin', git_url)
   end
   g.remote('origin').fetch
   g.checkout(data['ref'])
@@ -52,7 +53,7 @@ def parse_requires(requires_file)
   h[:conflicts] = []
   h[:replaces]  = []
   lines.each do |line|
-    @logger.debug line
+    @logger.debug "Pupmod requires: #{line}"
     case line.strip
     when /^#/
       next
@@ -85,28 +86,29 @@ def build_rpm(path, data)
 
   case type
   when :pupmod
-    pupmod = File.basename(path)
+    release = "#{Time.now.year}#{Time.now.month}#{Time.now.day}git#{g.log.first.sha[0..7]}"
     pup_meta = JSON.load(File.read(File.join(path,'metadata.json')))
     changelog_path = File.join(path,'CHANGELOG')
     deps_etc = parse_requires(File.join(path,'build','rpm_metadata','requires'))
-    @logger.debug deps_etc
+    @logger.debug "#{pup_meta['name']}: #{deps_etc.join(' ')}"
     cmd =  [ "fpm -s dir -t rpm -n pupmod-#{pup_meta['name']}" ]
     cmd << [ "--description \"#{pup_meta['summary']}\"" ]
     cmd << [ "--maintainer '#{pup_meta['author']}'" ]
     cmd << [ "--architecture noarch" ]
     cmd << [ "--license #{pup_meta['license']}" ]
     cmd << [ "--version #{pup_meta['version']}" ]
+    cmd << [ "--iteration #{release}" ]
     cmd << [ "--package rpms" ]
     cmd << [ "--url #{pup_meta['source']}" ]
     cmd << [ "--rpm-digest sha512" ]
+    cmd << [ "--rpm-changelog #{changelog_path}" ] if File.exists? changelog_path
     cmd << [ "--depends 'simp-adapter >= 0.0.1'" ]
     cmd << deps_etc
     cmd << [ "--template-scripts" ]
-    cmd << [ "--after-install  script-templates/after-install.erb" ]
-    cmd << [ "--before-install script-templates/before-install.erb" ]
-    cmd << [ "--after-remove   script-templates/after-remove.erb" ]
-    cmd << [ "--before-remove  script-templates/before-remove.erb" ]
-    cmd << [ "--rpm-changelog #{changelog_path}" ] if File.exists? changelog_path
+    cmd << [ "--after-install  script-templates/modules/after-install.erb" ]
+    cmd << [ "--before-install script-templates/modules/before-install.erb" ]
+    cmd << [ "--after-remove   script-templates/modules/after-remove.erb" ]
+    cmd << [ "--before-remove  script-templates/modules/before-remove.erb" ]
     cmd << [ "#{path.split('').drop(2).join}=/usr/share/simp/modules" ]
     # binding.pry
     @logger.debug "Running command -- #{cmd.flatten.join(' ')}"
@@ -114,9 +116,10 @@ def build_rpm(path, data)
     @logger.debug output
     return output
   when :doc
-    # dumb python stuff
+    @logger.debug "Build docs #{g.dir}"
   when :asset
     # easy existing spec file stuff?
+    @logger.debug "Build asset #{g.dir}"
   end
 end
 
