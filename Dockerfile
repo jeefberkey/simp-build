@@ -5,8 +5,9 @@ RUN apk update
 RUN apk upgrade
 RUN apk add curl wget bash
 
-# Install ruby and ruby-bundler
+# ruby and gem deps
 RUN apk add ruby ruby-bundler ruby-dev build-base libffi-dev curl-dev libxml2 zlib-dev
+# rmpbuild deps
 RUN apk add git rpm rpm-dev
 
 RUN mkdir /usr/fpmbuild
