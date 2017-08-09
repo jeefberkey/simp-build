@@ -71,7 +71,7 @@ def parse_requires(requires_file)
     end
   end
 
-  cmd = [ 'Requires: simp-adapter >= 0.0.1' ]
+  cmd = []
   h.each do |k,v|
     cmd << v.map { |dep| "--#{k.to_s} \"#{dep.split(' ').drop(1).join(' ')}\"" }
   end
@@ -99,6 +99,7 @@ def build_rpm(path, data)
     cmd << [ "--package rpms" ]
     cmd << [ "--url #{pup_meta['source']}" ]
     cmd << [ "--rpm-digest sha512" ]
+    cmd << [ "--depends 'simp-adapter >= 0.0.1'" ]
     cmd << deps_etc
     cmd << [ "--template-scripts" ]
     cmd << [ "--after-install  script-templates/after-install.erb" ]
